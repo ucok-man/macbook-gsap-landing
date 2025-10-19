@@ -135,11 +135,11 @@ body {
       @apply relative lg:overflow-hidden;
 
       video {
-        @apply w-full object-cover object-center;
+        @apply size-full object-cover object-center;
       }
 
       .mask {
-        @apply absolute h-full top-0 lg:-top-20 xl:top-0;
+        @apply absolute size-full top-0 md:top-1 xl:top-0;
 
         img {
           @apply h-full scale-150 lg:scale-100;
