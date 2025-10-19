@@ -1,13 +1,5 @@
+import { NAVLINKS } from "../../constants";
 import Button from "./button";
-
-const NAVLINKS = [
-  { label: "Store" },
-  { label: "Mac" },
-  { label: "iPhone" },
-  { label: "Watch" },
-  { label: "Vision" },
-  { label: "AirPods" },
-];
 
 export default function Navbar() {
   return (
