@@ -20,7 +20,7 @@ export default function Features() {
         <ModelScroll />
       </Canvas>
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 lg:inset-36">
         {FEATURE_ITEMS.map((feature, index) => (
           <div
             key={feature.id}
