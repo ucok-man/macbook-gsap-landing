@@ -4,6 +4,7 @@ import Features from "./components/features";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Highlight from "./components/highlight";
+import LocoScroll from "./components/loco-scroll";
 import Navbar from "./components/navbar";
 import Performance from "./components/performance";
 import ProductViewer from "./components/product-viewer";
@@ -13,15 +14,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <ProductViewer />
-      <Showcase />
-      <Performance />
-      <Features />
-      <Highlight />
-      <Footer />
-    </main>
+    <LocoScroll>
+      <main>
+        <Navbar />
+        <Hero />
+        <ProductViewer />
+        <Showcase />
+        <Performance />
+        <Features />
+        <Highlight />
+        <Footer />
+      </main>
+    </LocoScroll>
   );
 }

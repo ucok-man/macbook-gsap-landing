@@ -36,8 +36,11 @@ export default function Showcase() {
           playsInline
           autoPlay
         />
-        <div id="mask" className="absolute size-full top-0 md:top-1 xl:top-0">
-          <img src="/mask-logo.svg" className="h-full scale-150 lg:scale-100" />
+        <div id="mask" className="absolute size-[101%] top-0">
+          <img
+            src="/mask-logo.svg"
+            className="size-full scale-150 lg:scale-100"
+          />
         </div>
       </div>
 
