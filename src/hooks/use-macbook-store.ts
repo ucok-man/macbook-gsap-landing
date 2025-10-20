@@ -19,7 +19,7 @@ export const useMacbookStore = create<State & Action>((set, _get, store) => ({
   color: MacbookColor.BLACK,
   setColor: (color: Color) => set({ color }),
 
-  scale: 0.08,
+  scale: MacbookSize[14],
   setScale: (scale: Scale) => set({ scale }),
 
   reset: () => set(store.getInitialState()),

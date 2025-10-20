@@ -35,3 +35,58 @@ export const NO_CHANGE_PARTS = [
   "Object_21",
   "Object_10",
 ];
+
+export const PERFORMANCE_IMAGES = [
+  { id: "img1", src: "/performance1.png" },
+  { id: "img2", src: "/performance2.png" },
+  { id: "img3", src: "/performance3.png" },
+  { id: "img4", src: "/performance4.png" },
+  { id: "img5", src: "/performance5.jpg" },
+  { id: "img6", src: "/performance6.png" },
+  { id: "img7", src: "/performance7.png" },
+];
+
+export const PERFORMANCE_IMAGES_POSITION = [
+  {
+    id: "img1",
+    left: "5%",
+    right: undefined,
+    bottom: "65%",
+  },
+  {
+    id: "img2",
+    left: undefined,
+    right: "10%",
+    bottom: "60%",
+  },
+  {
+    id: "img3",
+    left: undefined,
+    right: "-5%",
+    bottom: "45%",
+  },
+  {
+    id: "img4",
+    left: undefined,
+    right: "-10%",
+    bottom: "0%",
+  },
+  {
+    id: "img5",
+    right: undefined,
+    left: "20%",
+    bottom: "50%",
+  },
+  {
+    id: "img6",
+    right: undefined,
+    left: "2%",
+    bottom: "30%",
+  },
+  {
+    id: "img7",
+    right: undefined,
+    left: "-5%",
+    bottom: "0%",
+  },
+] as const;
