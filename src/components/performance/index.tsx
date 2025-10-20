@@ -1,15 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-import { useMediaQuery } from "react-responsive";
 import {
   PERFORMANCE_IMAGES,
   PERFORMANCE_IMAGES_POSITION,
 } from "../../constants";
+import { useIsDesktop } from "../../hooks/use-is-desktop";
 import { cn } from "../../utils";
 
 export default function Performance() {
-  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isDesktop = useIsDesktop();
   const sectionRef = useRef<HTMLTableSectionElement>(null);
   const imagesRef = useRef<HTMLDivElement>(null);
 

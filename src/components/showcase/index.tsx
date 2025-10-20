@@ -1,9 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useMediaQuery } from "react-responsive";
+import { useIsDesktop } from "../../hooks/use-is-desktop";
 
 export default function Showcase() {
-  const isDekstop = useMediaQuery({ query: "(min-width:1024px)" });
+  const isDekstop = useIsDesktop();
 
   useGSAP(() => {
     if (isDekstop) {

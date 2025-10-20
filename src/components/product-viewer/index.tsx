@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { useMediaQuery } from "react-responsive";
 import { MacbookColor, MacbookSize } from "../../constants";
+import { useIsDesktop } from "../../hooks/use-is-desktop";
 import { useMacbookStore } from "../../hooks/use-macbook-store";
 import { cn } from "../../utils";
 import StudioLight from "../studio-light";
@@ -8,7 +8,7 @@ import ModelSwitcher from "./model-switcher";
 
 export default function ProductViewer() {
   const { color, scale, setColor, setScale } = useMacbookStore();
-  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isDesktop = useIsDesktop();
 
   return (
     <section

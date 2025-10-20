@@ -8,10 +8,13 @@ Source: https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b3031
 Title: macbook pro M3 16 inch 2024
 */
 
-import { useGLTF, useTexture } from "@react-three/drei";
-import type { JSX } from "react";
+import { useGLTF, useVideoTexture } from "@react-three/drei";
+import { useEffect, type JSX } from "react";
 import * as THREE from "three";
 import type { GLTF } from "three-stdlib";
+import { NO_CHANGE_PARTS } from "../../constants";
+import { useMacbookStore } from "../../hooks/use-macbook-store";
+import { isMeshWithMaterial } from "../../utils";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ActionName = any;
@@ -66,12 +69,23 @@ type GLTFResult = GLTF & {
   animations: GLTFAction[];
 };
 
-export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF(
+export default function MacbookModel(props: JSX.IntrinsicElements["group"]) {
+  const { nodes, materials, scene } = useGLTF(
     "/models/macbook-transformed.glb"
   ) as unknown as GLTFResult;
 
-  const texture = useTexture("/screen.png");
+  const { color, texture } = useMacbookStore();
+  const screenTexture = useVideoTexture(texture);
+
+  useEffect(() => {
+    scene.traverse((child) => {
+      if (isMeshWithMaterial(child)) {
+        if (!NO_CHANGE_PARTS.includes(child.name)) {
+          child.material.color = new THREE.Color(color);
+        }
+      }
+    });
+  }, [color, scene]);
 
   return (
     <group {...props} dispose={null}>
@@ -160,12 +174,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         material={materials.JvMFZolVCdpPqjj}
         rotation={[Math.PI / 2, 0, 0]}
       />
-      <mesh
-        geometry={nodes.Object_123.geometry}
-        material={materials.sfCQkHOWyrsLmor}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
-        <meshBasicMaterial map={texture} />
+      <mesh geometry={nodes.Object_123.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        <meshBasicMaterial map={screenTexture} />
       </mesh>
       <mesh
         geometry={nodes.Object_127.geometry}

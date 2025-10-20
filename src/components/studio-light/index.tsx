@@ -39,10 +39,10 @@ export default function StudioLight() {
         intensity={isBlack ? 5 : 1}
       />
       <spotLight
-        position={[0, -50, 20]}
+        position={[0, -20, 20]}
         angle={0.15}
         decay={-0.15}
-        intensity={isBlack ? 2 : 1}
+        intensity={isBlack ? 2 : 0.5}
       />
     </group>
   );
